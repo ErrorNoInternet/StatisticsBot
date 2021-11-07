@@ -6,6 +6,9 @@ This is a bot that shows you all kinds of statistics, from the messages in your 
 	- `TOKEN` - The Discord bot token
 
 ```sh
-javac -cp 'modules/*' *.java && java -cp 'modules/*:' Main
+git clone https://github.com/ErrorNoInternet/StatisticsBot
+cd StatisticsBot
+javac -cp 'modules/*' *.java
+java -cp 'modules/*:' Main
 ```
 
