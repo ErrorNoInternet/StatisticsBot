@@ -3,7 +3,7 @@ This is a bot that shows you all kinds of statistics, from the messages in your 
 
 ## Setup
 - Environment variables:
-	- `TOKEN` - The Discord bot token
+	- `TOKEN` - Discord bot token
 
 ```sh
 git clone https://github.com/ErrorNoInternet/StatisticsBot
