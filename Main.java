@@ -312,7 +312,7 @@ public class Main extends ListenerAdapter {
 
 			Plot plot = Plot.create();
 			plot.plot().add(stocks).linewidth(2);
-			plot.xlim(days-1, 0);
+			plot.xlim(days, 0);
 			plot.title(String.format("%s Stocks", currency.toUpperCase()));
 			plot.ylabel("USD");
 			plot.xlabel("Days ago");
