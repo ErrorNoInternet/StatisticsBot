@@ -293,7 +293,7 @@ public class Main extends ListenerAdapter {
 			SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(parser.parse(currencyDate));
-			for (int i = 0; i < days-1; i++) {
+			for (int i = 0; i < days; i++) {
 			    calendar.add(Calendar.DATE, -1);
 				String date = parser.format(calendar.getTime());
 				url = new URL(String.format("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/%s/currencies/%s/usd.json", date, currency));
