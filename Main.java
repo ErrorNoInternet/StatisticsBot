@@ -1,10 +1,9 @@
-import com.github.sh0nk.matplotlib4j.Plot;
-
 import java.awt.Color;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryUsage;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -12,14 +11,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import javax.security.auth.login.LoginException;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryUsage;
 import javax.management.Attribute;
 import javax.management.AttributeList;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
+import javax.security.auth.login.LoginException;
+
+import com.github.sh0nk.matplotlib4j.Plot;
+
+import org.json.*;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -38,8 +39,6 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.api.interactions.components.Button;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
-
-import org.json.*;
 
 public class Main extends ListenerAdapter {
 	public static long startTime = System.currentTimeMillis();
@@ -249,8 +248,8 @@ public class Main extends ListenerAdapter {
 	}
 
 	public void currencyStocksCommand(SlashCommandEvent event, String currency, long days) {
-		if (days > 30) {
-			event.reply("You can only fetch up to **30 days** of stock history!").setEphemeral(true).queue();
+		if (days > 60) {
+			event.reply("You can only fetch up to **60 days** of stock history!").setEphemeral(true).queue();
 			return;
 		} else if (days < 1) {
 			event.reply("You need to specify a **positive number** of days!").setEphemeral(true).queue();
